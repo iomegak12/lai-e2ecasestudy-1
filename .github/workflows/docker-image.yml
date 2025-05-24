@@ -12,7 +12,7 @@
 # Script environment variables
 env:
   DOCKER_IMAGE_NAME: lai-e2ecasestudy1
-  DOCKER_REGISTRY: index.docker.io/v2/
+  DOCKER_REGISTRY: index.docker.io
 
 name: Build and Push Docker Image
 

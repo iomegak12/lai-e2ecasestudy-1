@@ -51,10 +51,10 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: | 
-            ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_NAME }}
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_NAME }}:latest
           tags: |
-            type=semver,pattern={{version}}
+            latest
+            
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -62,5 +62,4 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}          
+          tags: ${{ steps.meta.outputs.tags }}         
